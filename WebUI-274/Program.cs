@@ -14,6 +14,7 @@ namespace WebUI_274
             using (var model = IfcStore.Open(modelFile))
             {
                 var context = new Xbim3DModelContext(model);
+                context.CreateContext();
 
                 var wexbimFilename = Path.ChangeExtension(modelFile, "wexbim");
                 using(var wexbimFile = File.Create(wexbimFilename))
